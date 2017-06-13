@@ -1,0 +1,22 @@
+{
+    "require": {
+    },
+    "config": {
+        "secure-http": false
+    },
+ "autoload": {
+        "psr-4": {
+	    "Acme\\": "src/",
+	    "App\\" :  "app/action/"	  
+		 }
+    },
+    "repositories": [
+        {   
+            "packagist": false
+        },  
+        {   
+            "type": "composer", 
+            "url": "http://packagist.phpcomposer.com"
+        }   
+    ]
+}
