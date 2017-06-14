@@ -13,7 +13,7 @@ class Router{
     private $uri;
 
     public function run($path = "/App/Index/index"){
-        return $this->dispatch($path);
+        $this->dispatch($path);
     }
 
     public function dispatch($path){
@@ -29,7 +29,7 @@ class Router{
         $obj = $this->_getObj();
         if(false !== $obj){
             $fun = $this->implement;
-            $obj->$fun();
+            $obj->$fun(Params::getParams());
         }else{
 	    die('no action');
 	}
