@@ -3,6 +3,7 @@ v1.1
 重构路由，增加控制器，封装数据源，增加安全模块跟xml解析模块 修改命名规则
 
 
+
 Acme
 
 Acme 空间为框架的核心空间 所有的内建函数与第三方包都在这里进行二次封装
@@ -15,6 +16,7 @@ Acme对应目录为 /src
 
 
 数据层（Action）
+
 Action层只接收并强制转换数据类型，简历前端数据于后端框架的映射关系，不做其余操作
 所有的get，post，cookie数据封装在 $this->params 中（已经进行html转译 防止xss注入）
 如果要获取jsom／xml数据可以调用 \Acme\Params 模块中的方法 提供了 json， xml，和原生数据的获取方式
@@ -27,6 +29,7 @@ Action对应目录为 /项目/action
 需要继承 BaseAction 父类;
 
 控制器（Controller）
+
 Controller采用自动渲染的方式当你新建了Action层的时候 框架会自动加载相对应的Controller
 /App/Test/Index Action为例 会自动加载 /app/controller/Test/IndexController.php 并执行invoke($data)方法
 $data的数据来源与Action return的数据
@@ -58,6 +61,7 @@ class TestController extends BaseController{
 ===================================================
 
 数据返回
+
 框架将直接输出Controller中return的数据
 
 在BaseAction 中定义了一个 __display()方法
