@@ -12,6 +12,7 @@ Acme对应目录为 /src
 
 
 路由
+
 /App/Test/Index 路由规则为 ／项目／action文件／action对应的方法
 
 
@@ -20,23 +21,32 @@ Acme对应目录为 /src
 Action层只接收并强制转换数据类型，简历前端数据于后端框架的映射关系，不做其余操作
 所有的get，post，cookie数据封装在 $this->params 中（已经进行html转译 防止xss注入）
 如果要获取jsom／xml数据可以调用 \Acme\Params 模块中的方法 提供了 json， xml，和原生数据的获取方式
+
 \Acme\Params::getJson()
 \Acme\Params::getXml()
 \Acme\Params::getParams()
 \Acme\Params::getData()
+
 理论上不允许action以为的地方调用\Acme\Params 模块 所有的外部数据 均在action中过滤处理才可以到控制器
+
 Action对应目录为 /项目/action
 需要继承 BaseAction 父类;
 
 控制器（Controller）
 
 Controller采用自动渲染的方式当你新建了Action层的时候 框架会自动加载相对应的Controller
+
 /App/Test/Index Action为例 会自动加载 /app/controller/Test/IndexController.php 并执行invoke($data)方法
+
 $data的数据来源与Action return的数据
+
 控制器缺省的状态下会直接输出Action return的数据
+
 需要继承 BaseController 父类;
 
+
 =================================================
+
 app/action/TestAction.php
 
 <?php
@@ -58,6 +68,7 @@ class TestController extends BaseController{
     public function invoke($data){
         var_dump($data);// 结果为 array('a'=>'aaaa','b'=>'bbbbb')
 }
+
 ===================================================
 
 数据返回
@@ -65,10 +76,13 @@ class TestController extends BaseController{
 框架将直接输出Controller中return的数据
 
 在BaseAction 中定义了一个 __display()方法
+
 可以自定义相应的数据输出标准 默认定义了 json／xml
+
 通过 $returnType 可以控制返回的数据结构与类型
 
 ====================================================
+
 switch($this->returnType){
     case 'JSON':
         echo json_encode(array('errNo'=>'1','errMsg'=>'','data'=>$this->_res));break;
@@ -77,4 +91,5 @@ switch($this->returnType){
         $xml = new \Acme\Xml();
         echo $xml->toXml($this->_res,false,$this->xmlRoot,$this->xmlEncode);break;
 }
+
 =====================================================
