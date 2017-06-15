@@ -17,6 +17,11 @@ Acme对应目录为 /src
 
 /App/Test/Index 路由规则为 ／项目／action文件／action对应的方法
 
+制定入口文件
+location / {
+                rewrite  ^(.*)$ /index.php  last;
+        #       try_files $uri /index.php?/$uri;
+        }
 
 #数据层（Action）
 
