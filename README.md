@@ -1,22 +1,16 @@
 # codingcat
-v1.1
+#v1.1
 重构路由，增加控制器，封装数据源，增加安全模块跟xml解析模块 修改命名规则
 
-
-
-Acme
-
+#Acme
 Acme 空间为框架的核心空间 所有的内建函数与第三方包都在这里进行二次封装
 理论上不允许直接调用composer的第三发包 要通过Acme封装 再进行使用
 Acme对应目录为 /src
 
-
-路由
-
+#路由
 /App/Test/Index 路由规则为 ／项目／action文件／action对应的方法
 
-
-数据层（Action）
+#数据层（Action）
 
 Action层只接收并强制转换数据类型，简历前端数据于后端框架的映射关系，不做其余操作
 所有的get，post，cookie数据封装在 $this->params 中（已经进行html转译 防止xss注入）
@@ -32,7 +26,7 @@ Action层只接收并强制转换数据类型，简历前端数据于后端框�
 Action对应目录为 /项目/action
 需要继承 BaseAction 父类;
 
-控制器（Controller）
+#控制器（Controller）
 
 Controller采用自动渲染的方式当你新建了Action层的时候 框架会自动加载相对应的Controller
 
@@ -71,7 +65,7 @@ class TestController extends BaseController{
 
 ===================================================
 
-数据返回
+#数据输出
 
 框架将直接输出Controller中return的数据
 
