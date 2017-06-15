@@ -22,8 +22,6 @@ class  BaseAction{
         if(class_exists($class)){
             $this->_obj = new $class;
             $this->_res = $this->_obj->invoke($this->_res);
-        }else{
-            echo 'meiyou kongzhiqi';
         }
         $this->__display();
     }
