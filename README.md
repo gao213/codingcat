@@ -106,44 +106,14 @@ class TestController extends BaseController{
 
 
 ===================================================
-
-
-
-
 #数据输出
-
-
-
-
-
 框架将直接输出Controller中return的数据
-
-
-
-
-
 在BaseAction 中定义了一个 __display()方法
-
-
 可以自定义相应的数据输出标准 默认定义了 json／xml
-
-
-
-
 通过 $returnType 可以控制返回的数据结构与类型
 
-
-
-
-
-
 ====================================================
-
-
-
-
 switch($this->returnType){
-
     case 'JSON':
         echo json_encode(array('errNo'=>'1','errMsg'=>'','data'=>$this->_res));break;
         
