@@ -8,31 +8,33 @@
 namespace Acme;
 class Xml{
 
-    public static function toXml($data, $eIsArray=FALSE, $root = false, $encode = "") {
-        $xml = new XmlWriter();
+    private $xml;
+
+    public function __construct(){
+        $this->xml = new \XmlWriter();
+    }
+
+    public function toXml($data, $eIsArray=FALSE, $root = false, $encode = "") {
         $f_root = (!$root) ? 'REQUEST' : $root;
+        $encode = empty($encode) ? 'GBK' : $encode;
         if(!$eIsArray) {
-            $xml->openMemory();
-            $xml->startDocument('1.0', empty($encode) ? 'GBK' : $encode);
-            $xml->startElement($f_root);
+            $this->xml->openMemory();
+            $this->xml->startDocument('1.0', $encode);
+            $this->xml->startElement($f_root);
         }
         foreach($data as $key => $value){
-            $items = array('item0','item1','item2','item3');
             if(is_array($value)){
                 $tmp = $key;
-                if(in_array($tmp,$items)){
-                    $tmp ='item';
-                }
-                $xml->startElement($tmp);
-                self::toXml($value, TRUE, $f_root);
-                $xml->endElement();
+                $this->xml->startElement($tmp);
+                $this->toXml($value, TRUE, $f_root, $encode);
+                $this->xml->endElement();
                 continue;
             }
-            $xml->writeElement($key, $value);
+            $this->xml->writeElement($key, $value);
         }
         if(!$eIsArray) {
-            $xml->endElement();
-            return $xml->outputMemory(true);
+            $this->xml->endElement();
+            return $this->xml->outputMemory(true);
         }
     }
 

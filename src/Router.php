@@ -11,6 +11,7 @@ class Router{
     private $action;
     private $implement;
     private $uri;
+    private $_error;
 
     public function run($path = "/App/Index/index"){
         $this->dispatch($path);
@@ -28,11 +29,11 @@ class Router{
         $this->_setPatch();
         $obj = $this->_getObj();
         if(false !== $obj){
-            $fun = $this->implement;
-            $obj->$fun(Params::getParams());
+                $fun = $this->implement;
+                $obj->__init($this->home, $this->action, $fun);
         }else{
-	    die('no action');
-	}
+	        die('no action');
+	    }
     }
 
     private function _setPatch(){
@@ -46,7 +47,7 @@ class Router{
     }
 
     private function _getObj(){
-	$class = $this->home.'\\'.$this->action;
+	$class = $this->home.'\\Action\\'.$this->action."Action";
         if(class_exists($class)){
             return new $class;
         }else{

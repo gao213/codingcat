@@ -17,8 +17,12 @@ class Params{
     }
 
     public static function getXml(){
-        return Security::htmlencode(Xml::toArray(file_get_contents("php://input"),true));
-
+        $xml_parser = xml_parser_create();
+        if(xml_parse($xml_parser,file_get_contents("php://input"),true)) {
+            return Security::htmlencode(Xml::toArray(file_get_contents("php://input"), true));
+        }else{
+            return false;
+        }
     }
 
     public static function getData(){
