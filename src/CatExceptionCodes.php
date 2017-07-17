@@ -7,9 +7,12 @@
  */
 namespace Acme;
 class CatExceptionCodes{
+    const PARAM_OK = 0;
     const PARAM_ERROR = 1;
 
     public static $errMsg = array(
             self::PARAM_ERROR                 => '参数错误',
         );
 }
+
+

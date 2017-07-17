@@ -8,7 +8,6 @@ class TestAction extends BaseAction{
     }
 
     public function Test(){
-        $this->returnType = "XML";
         return array('a'=>'aaaa','b'=>'bbbbb');
     }
 }
