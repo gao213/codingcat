@@ -9,6 +9,7 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'App\\Model\\' => array($baseDir . '/app/Model'),
     'App\\Controller\\' => array($baseDir . '/app/controller'),
     'App\\Action\\' => array($baseDir . '/app/action'),
     'Acme\\' => array($baseDir . '/src'),

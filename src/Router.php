@@ -13,7 +13,7 @@ class Router{
     private $uri;
     private $_error;
 
-    public function run($path = "/App/Index/index"){
+    public function run($path = "/App/Index/Index"){
         $this->dispatch($path);
     }
 
@@ -64,6 +64,6 @@ class Router{
     }
 
     private function _setImplement($implement){
-        $this->implement = empty($implement) ? 'index' : $implement;
+        $this->implement = empty($implement) ? 'Index' : $implement;
     }
 }

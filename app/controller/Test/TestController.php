@@ -1,10 +1,17 @@
 <?php
 namespace App\Controller\Test;
 use App\Controller\BaseController;
-
+use \App\Model\Users;
 class TestController extends BaseController{
     public function invoke($data){
-        return $data;
+
+        $a = new Users();
+//        $a->test();
+        $a->get();
+
+//        echo 111233;
+//        echo 111233;
+//        return $data;
         //var_dump($data);
 //        echo 'is testController';
 //    echo $data['aa'];

@@ -26,7 +26,9 @@ class CatException extends \Exception{
             //$this->errstr .= "[".$appendStr. "]";
             $this->errstr = $appendStr;
         }
+
         parent::__construct($errstr, $errno);
+
     }
 
     public function getErrNo()

@@ -5,10 +5,10 @@
  * Date: 2017/6/27
  * Time: 11:13
  */
-
-require '../vendor/autoload.php';
+namespace Acme;
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use  Illuminate\Database\Eloquent\Model  as Eloquent;
 
 $database = [
     'driver'    => 'mysql',
@@ -32,13 +32,14 @@ $capsule->setAsGlobal();
 // 启动Eloquent
 $capsule->bootEloquent();
 
-Capsule::schema()->create('users', function($table)
-{
-    $table->increments('id');
-    $table->string('username', 40);
-    $table->string('email')->unique();
-    $table->timestamps();
-});
+class DataBase extends Eloquent{
+
+}
+
+
+
+
+
 
 
 

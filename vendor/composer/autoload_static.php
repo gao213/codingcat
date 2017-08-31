@@ -23,6 +23,7 @@ class ComposerStaticInitdcec50f9b24148fd5abccbcbf26a0353
         ),
         'A' => 
         array (
+            'App\\Model\\' => 10,
             'App\\Controller\\' => 15,
             'App\\Action\\' => 11,
             'Acme\\' => 5,
@@ -41,6 +42,10 @@ class ComposerStaticInitdcec50f9b24148fd5abccbcbf26a0353
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'App\\Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Model',
         ),
         'App\\Controller\\' => 
         array (

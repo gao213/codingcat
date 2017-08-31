@@ -8,7 +8,8 @@
         "psr-4": {
 	    "Acme\\": "src/",
 	    "App\\Action\\" :  "app/action/",
-	    "App\\Controller\\" :  "app/controller/"
+	    "App\\Controller\\" :  "app/controller/",
+	    "App\\Model\\" :  "app/model/"
 		 }
     },
     "repositories": [

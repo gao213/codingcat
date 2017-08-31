@@ -5,6 +5,8 @@ use App\Controller\BaseController;
 class IndexController extends BaseController{
     function invoke($data){
         echo "is IndexController";
+        throw new \Acme\CatException('3','1');
+        echo 111;
 //        throw new \Exception();
 //        echo 'err';
 //        echo 'is indexController';die;
