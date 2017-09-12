@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller\Test;
-use App\Controller\BaseController;
+use Acme\BaseController;
 
 class IndexController extends BaseController{
     function invoke($data){

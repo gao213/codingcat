@@ -4,7 +4,7 @@ namespace App\Action;
 use Acme\BaseAction;
 //use Acme\CatException;
 
-class TestAction extends BaseAction{
+class WwAction extends BaseAction{
 
     public function Index(){
         echo "is index action=========>";
@@ -12,7 +12,7 @@ class TestAction extends BaseAction{
 
     public function Test(){
 
-        return array('a'=>'aaaa','b'=>'bbbbb');
+        return array('a'=>'123123','b'=>'123123');
     }
 
     public function TestException(){

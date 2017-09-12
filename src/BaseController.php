@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Acme;
 
 abstract class BaseController{
     abstract function invoke($data);

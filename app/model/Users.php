@@ -8,7 +8,13 @@
 namespace App\Model;
 use \Acme\DataBase;
 class  Users extends DataBase{
-    protected $table = 'aaaa';
+//    protected $table = 'aaaa';
+
+    function __construct(){
+//        $this->table = 'aaaa';
+        parent::__construct();
+    }
+
     function test(){
         $user = new Users;
         $user->username = 'someone';

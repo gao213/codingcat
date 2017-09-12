@@ -5,10 +5,7 @@
  * Date: 2017/6/14
  * Time: 17:02
  */
-namespace App\Action;
-use \Acme\CatExceptionCodes;
-use \Acme\CatException;
-use \Acme\Params;
+namespace Acme;
 class  BaseAction{
 
     public $returnType = 'JSON';
