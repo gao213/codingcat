@@ -8,10 +8,8 @@
 namespace Acme;
 require_once("../vendor/autoload.php");
 use Illuminate\Database\Capsule\Manager as Capsule;
-use  Illuminate\Database\Eloquent\Model  as Eloquent;
 
 $database = CatConfig::getConfig('DB');
-
 $capsule = new Capsule;
 
 // 创建链接
@@ -23,9 +21,11 @@ $capsule->setAsGlobal();
 // 启动Eloquent
 $capsule->bootEloquent();
 
-class DataBase extends Eloquent{
+
+class DB extends Capsule{
 
 }
+
 
 
 

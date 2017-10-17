@@ -4,6 +4,7 @@
 重构路由，增加控制器，封装数据源，增加安全模块跟xml解析模块 修改命名规则
 
 
+
 #Acme
 
 Acme 空间为框架的核心空间 所有的内建函数与第三方包都在这里进行二次封装
@@ -22,6 +23,9 @@ location / {
                 rewrite  ^(.*)$ /index.php  last;
         #       try_files $uri /index.php?/$uri;
         }
+
+#重新加载autoload
+composer dump-autoload
 
 #数据层（Action）
 
